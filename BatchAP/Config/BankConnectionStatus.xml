@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Connections>
+  <!--BankCode:銀行代碼 MessageType:電文發送的種類 127.0.0.1:IP 999:Port 3000:送出逾時 3000:接收逾時-->
+  <BankAgent BankCode="0000" MessageType="0120">127.0.0.1:6107:150000:150000</BankAgent>
+  <BankAgent BankCode="0000" MessageType="0121">10.27.68.161:6107:5000:5000</BankAgent>
+  <BankAgent BankCode="0000" MessageType="0420">10.27.68.161:6107:5000:5000</BankAgent>
+  <BankAgent BankCode="0000" MessageType="0421">10.27.68.161:6107:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0120">10.27.68.161:6108:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0121">10.27.68.161:6108:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0420">10.27.68.161:6107:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0421">10.27.68.161:6107:5000:5000</BankAgent>
+</Connections>

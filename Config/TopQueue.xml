@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <!-- Topic producer -->
+  <object id="topicPublisher" type="ActiveMqLab.Producer.TopicPublisher, ActiveMqLab">
+    <property name="BrokerURL" value="tcp://localhost:61616"/>
+    <property name="Destination" value="TestTopic" />   
+  </object>
+
+  <!-- Topic consumer -->
+  <object id="topicSubscriber" type="ActiveMqLab.Consumer.TopicSubscriber, ActiveMqLab" singleton="false">
+    <property name="BrokerURL" value="tcp://localhost:61616"/>
+    <property name="Destination" value="TestTopic" />
+    <property name="ConsumerId" value="test.topic.subscriber#" />
+  </object>
+
+  <!-- Queue producer -->
+  <object id="queueSender" type="ActiveMqLab.Producer.QueueSender, ActiveMqLab">
+    <property name="BrokerURL" value="tcp://localhost:61616"/>
+    <property name="Destination" value="TestQueue" />
+  </object>
+
+  <!-- Queue consumer -->
+  <object id="queueReceiver" type="ActiveMqLab.Consumer.QueueReceiver, ActiveMqLab" singleton="false">
+    <property name="BrokerURL" value="tcp://localhost:61616"/>
+    <property name="Destination" value="TestQueue" />
+    <property name="ConsumerId" value="test.queue.receiver#" />
+  </object>
+</objects>
+
