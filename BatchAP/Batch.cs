@@ -16,6 +16,7 @@ using BatchAP.POCO;
 using System.Xml;
 using System.IO;
 using OL_Autoload_Lib.Controller.Common.Record;
+using System.Text.RegularExpressions;
 namespace BatchAP
 {
     public class Batch : IDisposable
@@ -382,7 +383,27 @@ namespace BatchAP
                                     if (receiveBytes == null)
                                     {
                                         log.Debug("接收資料為null,開始將資料加入異常Queue");
-                                        this.failed.Enqueue(requestToBankJsonStr);//加入異常列表
+                                        //要用Regex來比對嗎  Performance不知好不好//MESSAGE_TYPE:XXX0 --> XXX1
+                                        if (Regex.IsMatch(requestToBankJsonStr, "MESSAGE_TYPE:[0-9]{3}0"))
+                                        {
+                                            string repeatRequest = Regex.Replace(requestToBankJsonStr, "MESSAGE_TYPE:[0-9]{3}0",
+                                                delegate(Match match)
+                                                {
+                                                    string result = match.Value.Substring(0, match.Value.Length - 1) + "1";
+                                                    return result;
+                                                });
+                                            log.Debug("送出失敗: 修改MESSAGE_TYPE後的JSON =>" + repeatRequest);
+                                            //轉型回物件改MESSAGE_TYPE屬性內的值
+                                            //AutoloadRqt_2Bank tmp = JsonConvert.DeserializeObject<AutoloadRqt_2Bank>(requestToBankJsonStr);
+                                            //tmp.MESSAGE_TYPE = tmp.MESSAGE_TYPE.Substring(0, 3) + "1";//
+                                            //string sendFailRequest = JsonConvert.SerializeObject(tmp);
+                                            this.failed.Enqueue(repeatRequest);
+                                        }
+                                        else
+                                        {
+                                            //MESSAGE_TYPE:XXX1//格式已是重送的SPEC
+                                            this.failed.Enqueue(requestToBankJsonStr);//加入異常列表
+                                        }
                                         continue;
                                     }
                                 }
@@ -392,7 +413,14 @@ namespace BatchAP
                         {
                             log.Error("連線BankAgent異常:" + ex.StackTrace);
                             log.Error("連線異常,開始將資料加入異常Queue");
-                            this.failed.Enqueue(requestToBankJsonStr);//加入異常列表
+                            string repeatRequest = Regex.Replace(requestToBankJsonStr, "MESSAGE_TYPE:[0-9]{3}0",
+                                                delegate(Match match)
+                                                {
+                                                    string result = match.Value.Substring(0, match.Value.Length - 1) + "1";
+                                                    return result;
+                                                });
+                            log.Debug("[Exception]: 修改MESSAGE_TYPE後的JSON =>" + repeatRequest);
+                            this.failed.Enqueue(repeatRequest);//加入異常列表
                             continue;
                         }
                         finally
@@ -454,6 +482,7 @@ namespace BatchAP
                     #endregion
 
                     #region 3.清空Queue
+                    log.Debug("開始檢查並清空" + item.MessageType + "格式的暫存Queue");
                     if (this.waitForWork.Count > 0 || this.failed.Count > 0)
                     {
                         log.Debug("見鬼了...(類型:" + item.MessageType + ")Queue還有東西:\n waitForWork:" + this.waitForWork.Count + "  \nfailed:" + this.failed.Count);

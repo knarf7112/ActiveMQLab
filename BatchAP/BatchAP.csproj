@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BatchAP.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ALCommon">
       <HintPath>..\Lib\ALCommon.dll</HintPath>
