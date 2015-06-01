@@ -384,12 +384,12 @@ namespace BatchAP
                                     {
                                         log.Debug("接收資料為null,開始將資料加入異常Queue");
                                         //要用Regex來比對嗎  Performance不知好不好//MESSAGE_TYPE:XXX0 --> XXX1
-                                        if (Regex.IsMatch(requestToBankJsonStr, "MESSAGE_TYPE:[0-9]{3}0"))
+                                        if (Regex.IsMatch(requestToBankJsonStr, "^{\"MESSAGE_TYPE\":\"[0-9]{3}0"))
                                         {
-                                            string repeatRequest = Regex.Replace(requestToBankJsonStr, "MESSAGE_TYPE:[0-9]{3}0",
+                                            string repeatRequest = Regex.Replace(requestToBankJsonStr, "^{\"MESSAGE_TYPE\":\"[0-9]{3}0",
                                                 delegate(Match match)
                                                 {
-                                                    string result = match.Value.Substring(0, match.Value.Length - 1) + "1";
+                                                    string result = match.Value.Substring(0, match.Value.Length - 1) + "1";//xxx0 --> xxx1
                                                     return result;
                                                 });
                                             log.Debug("送出失敗: 修改MESSAGE_TYPE後的JSON =>" + repeatRequest);
@@ -413,7 +413,8 @@ namespace BatchAP
                         {
                             log.Error("連線BankAgent異常:" + ex.StackTrace);
                             log.Error("連線異常,開始將資料加入異常Queue");
-                            string repeatRequest = Regex.Replace(requestToBankJsonStr, "MESSAGE_TYPE:[0-9]{3}0",
+                            //只修改第一層message_type的data,第二層message_type的data不動(因為第二層為原始交易資訊)
+                            string repeatRequest = Regex.Replace(requestToBankJsonStr, "^{\"MESSAGE_TYPE\":\"[0-9]{3}0",
                                                 delegate(Match match)
                                                 {
                                                     string result = match.Value.Substring(0, match.Value.Length - 1) + "1";
