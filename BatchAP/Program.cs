@@ -1,13 +1,5 @@
-﻿using ActiveMqLab.Consumer;
-using ActiveMqLab.Producer;
-using BatchAP.POCO;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using System;
+using System.Threading;
 
 namespace BatchAP
 {
@@ -15,7 +7,7 @@ namespace BatchAP
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("開始執行Batch...");
             Batch batchAP = new Batch();
             batchAP.InitRegisterSignON_OFF();
             batchAP.RunBatch();
@@ -37,8 +29,8 @@ namespace BatchAP
             //ts.OnMessageReceived += ts_OnMessageReceived;
             //ts.Start();
 
-            
-            Console.ReadKey();
+            Thread.Sleep(10);
+            //Console.ReadKey();
             batchAP.Dispose();
             //ts.Stop();
         }

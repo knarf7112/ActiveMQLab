@@ -5,36 +5,76 @@
   <BankAgent BankCode="0000" MessageType="0121">10.27.68.161:6107:5000:5000</BankAgent>
   <BankAgent BankCode="0000" MessageType="0420">10.27.68.161:6107:5000:5000</BankAgent>
   <BankAgent BankCode="0000" MessageType="0421">10.27.68.161:6107:5000:5000</BankAgent>-->
+  <!--*****************測試機*******************************************************-->
   <!--*****************玉山銀*******************************************************-->
-  <BankAgent BankCode="0808" MessageType="0120">10.27.68.161:6108:5000:5000</BankAgent>
+  <!--<BankAgent BankCode="0808" MessageType="0120">10.27.68.161:6108:5000:5000</BankAgent>
   <BankAgent BankCode="0808" MessageType="0121">10.27.68.161:6108:5000:5000</BankAgent>
   <BankAgent BankCode="0808" MessageType="0420">10.27.68.161:6107:5000:5000</BankAgent>
   <BankAgent BankCode="0808" MessageType="0421">10.27.68.161:6107:5000:5000</BankAgent>
-  <!--*****************華南銀*******************************************************-->
+  --><!--*****************華南銀*******************************************************--><!--
   <BankAgent BankCode="0008" MessageType="0120">10.27.68.161:6109:5000:5000</BankAgent>
   <BankAgent BankCode="0008" MessageType="0121">10.27.68.161:6109:5000:5000</BankAgent>
   <BankAgent BankCode="0008" MessageType="0420">10.27.68.161:6109:5000:5000</BankAgent>
   <BankAgent BankCode="0008" MessageType="0421">10.27.68.161:6109:5000:5000</BankAgent>
-  <!--*****************中信銀*******************************************************-->
+  --><!--*****************中信銀*******************************************************--><!--
+  <BankAgent BankCode="0822" MessageType="0120">10.27.68.161:6110:5000:5000</BankAgent>
+  <BankAgent BankCode="0822" MessageType="0121">10.27.68.161:6110:5000:5000</BankAgent>
+  <BankAgent BankCode="0822" MessageType="0420">10.27.68.161:6110:5000:5000</BankAgent>
   <BankAgent BankCode="0822" MessageType="0421">10.27.68.161:6110:5000:5000</BankAgent>
-  <!--*****************大眾銀*******************************************************-->
+  --><!--*****************大眾銀*******************************************************--><!--
   <BankAgent BankCode="0814" MessageType="0120">10.27.68.161:6112:5000:5000</BankAgent>
   <BankAgent BankCode="0814" MessageType="0121">10.27.68.161:6112:5000:5000</BankAgent>
   <BankAgent BankCode="0814" MessageType="0420">10.27.68.161:6111:5000:5000</BankAgent>
   <BankAgent BankCode="0814" MessageType="0421">10.27.68.161:6111:5000:5000</BankAgent>
-  <!--*****************第一銀*******************************************************-->
+  --><!--*****************第一銀*******************************************************--><!--
   <BankAgent BankCode="0007" MessageType="0120">10.27.68.161:6113:5000:5000</BankAgent>
   <BankAgent BankCode="0007" MessageType="0121">10.27.68.161:6113:5000:5000</BankAgent>
   <BankAgent BankCode="0007" MessageType="0420">10.27.68.161:6113:5000:5000</BankAgent>
   <BankAgent BankCode="0007" MessageType="0421">10.27.68.161:6113:5000:5000</BankAgent>
-  <!--*****************元大銀*******************************************************-->
+  --><!--*****************元大銀*******************************************************--><!--
   <BankAgent BankCode="0806" MessageType="0120">10.27.68.161:6115:5000:5000</BankAgent>
   <BankAgent BankCode="0806" MessageType="0121">10.27.68.161:6115:5000:5000</BankAgent>
   <BankAgent BankCode="0806" MessageType="0420">10.27.68.161:6114:5000:5000</BankAgent>
   <BankAgent BankCode="0806" MessageType="0421">10.27.68.161:6114:5000:5000</BankAgent>
-  <!--*****************富邦銀*******************************************************-->
+  --><!--*****************富邦銀*******************************************************--><!--
   <BankAgent BankCode="0012" MessageType="0120">10.27.68.161:6116:5000:5000</BankAgent>
   <BankAgent BankCode="0012" MessageType="0121">10.27.68.161:6116:5000:5000</BankAgent>
   <BankAgent BankCode="0012" MessageType="0420">10.27.68.161:6116:5000:5000</BankAgent>
-  <BankAgent BankCode="0012" MessageType="0421">10.27.68.161:6116:5000:5000</BankAgent>
+  <BankAgent BankCode="0012" MessageType="0421">10.27.68.161:6116:5000:5000</BankAgent>-->
+  <!--*****************正式機*******************************************************-->
+  <!--*****************玉山銀*******************************************************-->
+  <BankAgent BankCode="0808" MessageType="0120">10.69.3.37:6108:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0121">10.69.3.37:6108:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0420">10.69.3.37:6107:5000:5000</BankAgent>
+  <BankAgent BankCode="0808" MessageType="0421">10.69.3.37:6107:5000:5000</BankAgent>
+  <!--*****************華南銀*******************************************************-->
+  <BankAgent BankCode="0008" MessageType="0120">10.69.3.37:6109:5000:5000</BankAgent>
+  <BankAgent BankCode="0008" MessageType="0121">10.69.3.37:6109:5000:5000</BankAgent>
+  <BankAgent BankCode="0008" MessageType="0420">10.69.3.37:6109:5000:5000</BankAgent>
+  <BankAgent BankCode="0008" MessageType="0421">10.69.3.37:6109:5000:5000</BankAgent>
+  <!--*****************中信銀*******************************************************-->
+  <BankAgent BankCode="0822" MessageType="0120">10.69.3.37:6110:5000:5000</BankAgent>
+  <BankAgent BankCode="0822" MessageType="0121">10.69.3.37:6110:5000:5000</BankAgent>
+  <BankAgent BankCode="0822" MessageType="0420">10.69.3.37:6110:5000:5000</BankAgent>
+  <BankAgent BankCode="0822" MessageType="0421">10.69.3.37:6110:5000:5000</BankAgent>
+  <!--*****************大眾銀*******************************************************-->
+  <BankAgent BankCode="0814" MessageType="0120">10.69.3.37:6112:5000:5000</BankAgent>
+  <BankAgent BankCode="0814" MessageType="0121">10.69.3.37:6112:5000:5000</BankAgent>
+  <BankAgent BankCode="0814" MessageType="0420">10.69.3.37:6111:5000:5000</BankAgent>
+  <BankAgent BankCode="0814" MessageType="0421">10.69.3.37:6111:5000:5000</BankAgent>
+  <!--*****************第一銀*******************************************************-->
+  <BankAgent BankCode="0007" MessageType="0120">10.69.3.37:6113:5000:5000</BankAgent>
+  <BankAgent BankCode="0007" MessageType="0121">10.69.3.37:6113:5000:5000</BankAgent>
+  <BankAgent BankCode="0007" MessageType="0420">10.69.3.37:6113:5000:5000</BankAgent>
+  <BankAgent BankCode="0007" MessageType="0421">10.69.3.37:6113:5000:5000</BankAgent>
+  <!--*****************元大銀*******************************************************-->
+  <BankAgent BankCode="0806" MessageType="0120">10.69.3.37:6115:5000:5000</BankAgent>
+  <BankAgent BankCode="0806" MessageType="0121">10.69.3.37:6115:5000:5000</BankAgent>
+  <BankAgent BankCode="0806" MessageType="0420">10.69.3.37:6114:5000:5000</BankAgent>
+  <BankAgent BankCode="0806" MessageType="0421">10.69.3.37:6114:5000:5000</BankAgent>
+  <!--*****************富邦銀*******************************************************-->
+  <BankAgent BankCode="0012" MessageType="0120">10.69.3.37:6116:5000:5000</BankAgent>
+  <BankAgent BankCode="0012" MessageType="0121">10.69.3.37:6116:5000:5000</BankAgent>
+  <BankAgent BankCode="0012" MessageType="0420">10.69.3.37:6116:5000:5000</BankAgent>
+  <BankAgent BankCode="0012" MessageType="0421">10.69.3.37:6116:5000:5000</BankAgent>
 </Connections>
